@@ -3,19 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Northstar is a fictional digital banking dashboard demo.">
-  <title>Northstar Bank — Your money, in focus.</title>
+  <meta name="description" content="RickDan Bank is a fictional digital banking dashboard demo.">
+  <title>RickDan Bank — Make money feel simple.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
+  <section class="login-screen" id="loginScreen">
+    <div class="login-skyline"></div>
+    <div class="login-cloud cloud-one"></div><div class="login-cloud cloud-two"></div>
+    <div class="login-wrap">
+      <div class="login-brand"><span class="brand-mark"><span></span><span></span><span></span></span><strong>RickDan</strong><em>bank</em></div>
+      <div class="login-card">
+        <div class="login-card-heading"><span class="sunburst">✦</span><p class="eyebrow">Welcome back</p><h1>Good to see you.</h1><p>Sign in to your friendly, colorful money space.</p></div>
+        <form id="loginForm">
+          <label for="loginEmail">Email address</label>
+          <div class="input-wrap"><span>✉</span><input id="loginEmail" type="email" value="jordan@rickdan.example" autocomplete="email" required></div>
+          <label for="loginPassword">Password</label>
+          <div class="input-wrap"><span>●</span><input id="loginPassword" type="password" value="rickdan-demo" autocomplete="current-password" required><button type="button" id="passwordToggle" aria-label="Show password">Show</button></div>
+          <div class="login-options"><label class="remember"><input type="checkbox" checked> <span>Remember me</span></label><button type="button" class="link-button" data-toast="Password recovery is disabled in this demo">Forgot password?</button></div>
+          <button class="login-button" type="submit">Sign in <span>→</span></button>
+          <p class="login-error" id="loginError" role="alert"></p>
+        </form>
+        <div class="login-divider"><span>or</span></div>
+        <button class="guest-button" id="guestLogin" type="button">Explore demo account <span>✦</span></button>
+        <p class="login-footnote">Protected by RickDan Shield <span>·</span> <a href="#privacy">Privacy</a></p>
+      </div>
+      <p class="login-disclaimer">FICTIONAL DEMO BANK · NO REAL ACCOUNTS OR PAYMENTS</p>
+    </div>
+    <div class="login-bubble bubble-one">☁</div><div class="login-bubble bubble-two">✦</div>
+  </section>
+  <div class="app-shell is-hidden" id="appShell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#" aria-label="Northstar home">
+      <a class="brand" href="#overview" aria-label="RickDan Bank home">
         <span class="brand-mark"><span></span><span></span><span></span></span>
-        <span>northstar</span>
+        <span>RickDan</span><small>bank</small>
       </a>
       <div class="profile-card">
         <div class="avatar">JD</div>
@@ -39,7 +63,7 @@
           <p>Our team is here 24/7.</p>
           <button class="support-link" data-toast="Opening the support center…">Visit support <span>→</span></button>
         </div>
-        <div class="secure-note"><span>◉</span> Secured by Northstar</div>
+        <div class="secure-note"><span>◉</span> Secured by RickDan Shield</div>
       </div>
     </aside>
 
@@ -54,7 +78,7 @@
         </div>
       </header>
 
-      <div class="content">
+      <div class="content" id="overviewView">
         <section class="welcome-row">
           <div>
             <p class="eyebrow">Monday, September 7, 2026</p>
@@ -138,8 +162,9 @@
             </article>
           </aside>
         </section>
-        <footer><span>© 2026 Northstar Financial, Inc.</span><span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Status</a></span><span class="demo-label">DEMO SITE · NOT A REAL BANK</span></footer>
+        <footer><span>© 2026 RickDan Financial, Inc.</span><span><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#status">Status</a></span><span class="demo-label">DEMO SITE · NOT A REAL BANK</span></footer>
       </div>
+      <section class="detail-view is-hidden" id="detailView" aria-live="polite"></section>
     </main>
   </div>
   <div class="toast" id="toast" role="status"></div>

@@ -19,6 +19,8 @@ const loginError = document.getElementById("loginError");
 const loginEmail = document.getElementById("loginEmail");
 const loginPassword = document.getElementById("loginPassword");
 const passwordToggle = document.getElementById("passwordToggle");
+const demoEmail = "r@rickdan.me";
+const demoPassword = "123123";
 
 function enterBank() {
   loginScreen.classList.add("is-hidden");
@@ -29,14 +31,13 @@ function enterBank() {
 
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!loginEmail.value.trim() || loginPassword.value.length < 4) {
-    loginError.textContent = "Please enter the demo email and password.";
+  if (loginEmail.value.trim().toLowerCase() !== demoEmail || loginPassword.value !== demoPassword) {
+    loginError.textContent = "That email or password does not match this demo account.";
     return;
   }
   loginError.textContent = "";
   enterBank();
 });
-document.getElementById("guestLogin").addEventListener("click", enterBank);
 passwordToggle.addEventListener("click", () => {
   const showing = loginPassword.type === "text";
   loginPassword.type = showing ? "password" : "text";

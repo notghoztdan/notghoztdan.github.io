@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Northstar is a fictional digital banking dashboard demo.">
+  <title>Northstar Bank — Your money, in focus.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Northstar home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>northstar</span>
+      </a>
+      <div class="profile-card">
+        <div class="avatar">JD</div>
+        <div><strong>Jordan Davis</strong><span>Personal account</span></div>
+        <button class="icon-button profile-menu" aria-label="Open profile menu">•••</button>
+      </div>
+      <nav aria-label="Main navigation">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-link active" href="#overview" data-view="Overview"><span class="nav-icon">⌂</span> Overview</a>
+        <a class="nav-link" href="#payments" data-view="Payments"><span class="nav-icon">↗</span> Payments</a>
+        <a class="nav-link" href="#accounts" data-view="Accounts"><span class="nav-icon">▤</span> Accounts</a>
+        <a class="nav-link" href="#insights" data-view="Insights"><span class="nav-icon">◒</span> Insights</a>
+        <p class="nav-label nav-label-spaced">Manage</p>
+        <a class="nav-link" href="#cards" data-view="Cards"><span class="nav-icon">▭</span> Cards <span class="nav-badge">2</span></a>
+        <a class="nav-link" href="#settings" data-view="Settings"><span class="nav-icon">⚙</span> Settings</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="support-card">
+          <span class="support-icon">✦</span>
+          <strong>Need a hand?</strong>
+          <p>Our team is here 24/7.</p>
+          <button class="support-link" data-toast="Opening the support center…">Visit support <span>→</span></button>
+        </div>
+        <div class="secure-note"><span>◉</span> Secured by Northstar</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb"><span>Personal</span><i>/</i><strong id="pageTitle">Overview</strong></div>
+        <div class="topbar-actions">
+          <button class="icon-button notification-button" aria-label="Notifications" data-toast="You’re all caught up."><span>♢</span><b></b></button>
+          <button class="help-button" data-toast="Opening the help center…">Need help?</button>
+          <div class="mini-avatar">JD</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">Monday, September 7, 2026</p>
+            <h1>Good morning, Jordan <span>✦</span></h1>
+            <p class="subtitle">Here’s what’s happening with your money today.</p>
+          </div>
+          <button class="primary-button" id="addMoney"><span>＋</span> Add money</button>
+        </section>
+
+        <section class="overview-grid">
+          <article class="balance-card">
+            <div class="card-topline"><span>Total balance</span><button class="eye-toggle" id="balanceToggle" aria-label="Hide balance">◉</button></div>
+            <div class="balance-amount" id="balanceAmount">$24,680<span>.42</span></div>
+            <div class="balance-change"><span>↗ 4.8%</span> <em>vs. last month</em></div>
+            <div class="balance-chart" aria-label="Balance trend over six months">
+              <div class="chart-months"><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span></div>
+              <svg viewBox="0 0 560 105" role="img" aria-label="Upward balance line chart" preserveAspectRatio="none">
+                <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d6f06c" stop-opacity=".35"/><stop offset="100%" stop-color="#d6f06c" stop-opacity="0"/></linearGradient></defs>
+                <path class="chart-area" d="M0 88 C28 82 44 85 70 70 S108 51 132 62 S165 72 190 51 S228 30 256 43 S292 62 315 45 S350 24 380 32 S410 39 437 25 S476 22 496 13 S535 20 560 3 V105 H0Z"/>
+                <path class="chart-line" d="M0 88 C28 82 44 85 70 70 S108 51 132 62 S165 72 190 51 S228 30 256 43 S292 62 315 45 S350 24 380 32 S410 39 437 25 S476 22 496 13 S535 20 560 3"/>
+                <circle cx="560" cy="3" r="4"></circle>
+              </svg>
+            </div>
+          </article>
+          <article class="spend-card">
+            <div class="card-topline"><span>Monthly spending</span><button class="more-button" aria-label="More options">•••</button></div>
+            <div class="spend-total">$3,184<span>.72</span></div>
+            <div class="spend-change"><span>↓ 12.4%</span> <em>vs. last month</em></div>
+            <div class="spend-progress"><span style="width: 68%"></span></div>
+            <div class="spend-footer"><span>$4,700 monthly limit</span><strong>68%</strong></div>
+            <div class="spend-tags"><span><i class="dot purple"></i>Living <b>$1,460</b></span><span><i class="dot yellow"></i>Fun <b>$824</b></span><span><i class="dot teal"></i>Other <b>$900</b></span></div>
+          </article>
+        </section>
+
+        <section class="quick-actions">
+          <div class="section-heading"><h2>Quick actions</h2><span>Common things, made easy.</span></div>
+          <div class="action-list">
+            <button class="action-card" data-toast="Transfer flow opened"><span class="action-icon green">↗</span><span><strong>Transfer</strong><small>Move money</small></span><b>→</b></button>
+            <button class="action-card" data-toast="Payment flow opened"><span class="action-icon purple">⌁</span><span><strong>Pay a bill</strong><small>Stay on top of bills</small></span><b>→</b></button>
+            <button class="action-card" data-toast="Invite flow opened"><span class="action-icon orange">♧</span><span><strong>Send money</strong><small>To friends & family</small></span><b>→</b></button>
+            <button class="action-card" data-toast="Your card controls are ready"><span class="action-icon blue">▭</span><span><strong>Manage cards</strong><small>Freeze or replace</small></span><b>→</b></button>
+          </div>
+        </section>
+
+        <section class="lower-grid">
+          <article class="transactions-panel">
+            <div class="panel-header"><div><h2>Recent transactions</h2><span>Last 30 days</span></div><button class="text-button" id="viewAll">View all <span>→</span></button></div>
+            <div class="transaction-search"><span>⌕</span><input id="transactionSearch" type="search" placeholder="Search transactions" aria-label="Search transactions"></div>
+            <div class="transaction-list" id="transactionList">
+              <div class="transaction-day"><span>Today</span><span>Amount</span></div>
+              <div class="transaction-item" data-name="figma professional">
+                <div class="transaction-icon figma">F</div><div class="transaction-name"><strong>Figma Professional</strong><span>Today, 10:42 AM · Software</span></div><div class="transaction-amount negative">−$15.00</div>
+              </div>
+              <div class="transaction-item" data-name="whole foods market">
+                <div class="transaction-icon whole">W</div><div class="transaction-name"><strong>Whole Foods Market</strong><span>Today, 9:15 AM · Groceries</span></div><div class="transaction-amount negative">−$84.26</div>
+              </div>
+              <div class="transaction-day"><span>Yesterday</span><span>Amount</span></div>
+              <div class="transaction-item" data-name="acme inc payroll">
+                <div class="transaction-icon acme">A</div><div class="transaction-name"><strong>ACME Inc. · Payroll</strong><span>Yesterday, 8:00 AM · Income</span></div><div class="transaction-amount positive">+$3,420.00</div>
+              </div>
+              <div class="transaction-item" data-name="lyft">
+                <div class="transaction-icon lyft">L</div><div class="transaction-name"><strong>Lyft</strong><span>Yesterday, 6:32 PM · Transport</span></div><div class="transaction-amount negative">−$24.80</div>
+              </div>
+              <div class="transaction-item" data-name="notion">
+                <div class="transaction-icon notion">N</div><div class="transaction-name"><strong>Notion</strong><span>Sep 4, 2026 · Software</span></div><div class="transaction-amount negative">−$10.00</div>
+              </div>
+            </div>
+            <p class="empty-state" id="emptyState">No transactions match your search.</p>
+          </article>
+
+          <aside class="side-column">
+            <article class="accounts-panel">
+              <div class="panel-header"><div><h2>Your accounts</h2><span>All balances</span></div><button class="more-button" aria-label="More account options">•••</button></div>
+              <div class="account-row"><span class="account-icon checking">C</span><span class="account-info"><strong>Everyday Checking</strong><small>•• 4821</small></span><b>$8,420.42</b></div>
+              <div class="account-row"><span class="account-icon savings">S</span><span class="account-info"><strong>Rainy Day Savings</strong><small>•• 1048</small></span><b>$16,260.00</b></div>
+              <button class="add-account" data-toast="New account setup started"><span>＋</span> Open a new account</button>
+            </article>
+            <article class="goal-card">
+              <div class="goal-orbit"><span>✦</span></div>
+              <div><p class="eyebrow">Your next goal</p><h3>Weekend in Lisbon</h3><p class="goal-copy">$1,240 of $2,000 saved</p><div class="goal-progress"><span></span></div><div class="goal-meta"><span>62% complete</span><button data-toast="Goal details opened">Details →</button></div></div>
+            </article>
+          </aside>
+        </section>
+        <footer><span>© 2026 Northstar Financial, Inc.</span><span><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Status</a></span><span class="demo-label">DEMO SITE · NOT A REAL BANK</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -20,15 +20,14 @@
         <div class="login-card-heading"><span class="sunburst">✦</span><p class="eyebrow">Welcome back</p><h1>Good to see you.</h1><p>Sign in to your friendly, colorful money space.</p></div>
         <form id="loginForm">
           <label for="loginEmail">Email address</label>
-          <div class="input-wrap"><span>✉</span><input id="loginEmail" type="email" value="jordan@rickdan.example" autocomplete="email" required></div>
+          <div class="input-wrap"><span>✉</span><input id="loginEmail" type="email" autocomplete="off" placeholder="you@rickdan.me" required></div>
           <label for="loginPassword">Password</label>
-          <div class="input-wrap"><span>●</span><input id="loginPassword" type="password" value="rickdan-demo" autocomplete="current-password" required><button type="button" id="passwordToggle" aria-label="Show password">Show</button></div>
+          <div class="input-wrap"><span>●</span><input id="loginPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required><button type="button" id="passwordToggle" aria-label="Show password">Show</button></div>
           <div class="login-options"><label class="remember"><input type="checkbox" checked> <span>Remember me</span></label><button type="button" class="link-button" data-toast="Password recovery is disabled in this demo">Forgot password?</button></div>
           <button class="login-button" type="submit">Sign in <span>→</span></button>
           <p class="login-error" id="loginError" role="alert"></p>
         </form>
         <div class="login-divider"><span>or</span></div>
-        <button class="guest-button" id="guestLogin" type="button">Explore demo account <span>✦</span></button>
         <p class="login-footnote">Protected by RickDan Shield <span>·</span> <a href="#privacy">Privacy</a></p>
       </div>
       <p class="login-disclaimer">FICTIONAL DEMO BANK · NO REAL ACCOUNTS OR PAYMENTS</p>
